@@ -1,0 +1,56 @@
+--------------------------
+Fizz Buzz REST Server
+--------------------------
+Objective:
+--------------
+Implement a robust and production-ready Fizz-Buzz REST Server that follows the classic Fizz-Buzz logic.
+The server should expose a REST API endpoint, with the additional feature of a statistical endpoint.
+
+Fizz-Buzz Logic
+-------------------
+The Fizz-Buzz algorithm involves replacing all multiples of 3 with "fizz", all multiples of 5 with "buzz" and
+all multiples of 15 with "fizzbuzz". Your output should look like this:
+
+Example: “1,2,fizz,4,buzz,fizz,7,8,fizz,buzz,11,fizz,13,14,fizzbuzz,16,..."
+Requirements
+Your server should adhere to the following specifications:
+
+1. REST API Endpoint
+-----------------------------
+Accept five parameters: three integers (int1, int2, and limit) and two strings (str1 and str2).
+Return a list of strings containing numbers from 1 to limit.
+Replace multiples of int1 with str1, multiples of int2 with str2, and multiples of both int1 and int2 with str1str2
+
+/v1/fizzbuzz?_int1=&_int2=&_limit=&_str1=&_str2=
+Output - Generates the values as per FizzBuzz Logic
+
+2. Production Ready
+-----------------------------
+Ensure that the server is ready for production use.
+Prioritize clean and maintainable code to facilitate future development by other developers.
+
+Actuators added - all endpoints included except env, beans
+
+3. Statistics Endpoint:
+------------------------------
+Add a statistics endpoint that accepts no parameters.
+Return the parameters corresponding to the most used request.
+Include the number of hits for the most frequent request.
+
+/v1/statistics - endpoint to get the most called request
+
+4. Unit Tests:
+-----------------------------
+Develop comprehensive unit tests to validate the functionality of your server.
+
+Added all the unit tests necessary for validations under src/test folder
+
+5. API Documentation:
+-----------------------------
+Accessible at localhost:8080/api-docs or localhost:8080/swagger-ui/index.html
+
+6. Build Instruction:
+-----------------------------
+In-mem db H2 provided, console can be accessed at localhost:8080/h2-console
+To create build jar - run mvn clean compile install package
+Table name - Statistics
